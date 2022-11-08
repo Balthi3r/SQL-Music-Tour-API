@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   MeetGreet.init({
     meet_greet_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      autoIncrement: false,
       primaryKey: true
     },
     event_id: {

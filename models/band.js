@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 const {
   Model
 } = require('sequelize');
@@ -14,14 +14,31 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Band.init({
-    band_id: DataTypes.INTEGER,
-    name: DataTypes.STRING,
-    genre: DataTypes.TEXT,
-    available_start_time: DataTypes.DATE,
-    end_time: DataTypes.DATE
+    band_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: false
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    genre: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    available_start_time: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    end_time: {
+        type: DataTypes.DATE,
+        allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Band',
-  });
-  return Band;
-};
+    tableName: 'band',
+    timestamps: false
+  })
+  return Band
+}

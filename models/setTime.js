@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     set_time_id: {
       type: DataTypes.INTEGER, 
       primaryKey: true,
-      allowNull: false
+      autoIncrement: false
     },
     event_id: {
       type: DataTypes.SMALLINT,
